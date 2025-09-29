@@ -1,7 +1,7 @@
-import { API_KEY, TMDB_BASE_URL } from './config.js';
+import { API_BASE_URL } from './config.js';
 
 export async function fetchApiData(endpoint) {
-  const url = `${TMDB_BASE_URL}/${endpoint}?api_key=${API_KEY}`;
+  const url = `${API_BASE_URL}?endpoint=${encodeURIComponent(endpoint)}`;
 
   try {
     const response = await fetch(url);
@@ -16,7 +16,7 @@ export async function fetchApiData(endpoint) {
 }
 
 export async function searchApiData({ type, term, page }) {
-  const url = `${TMDB_BASE_URL}/search/${type}?api_key=${API_KEY}&query=${term}&page=${page}`;
+  const url = `${API_BASE_URL}?type=${encodeURIComponent(type)}&term=${encodeURIComponent(term)}&page=${page || 1}`;
   try {
     const response = await fetch(url);
     if (!response.ok) {

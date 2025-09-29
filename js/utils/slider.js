@@ -72,8 +72,8 @@ function initializeSwiper(swiperSelector = ".swiper") {
     },
     // Navigation arrows (dynamic based on swiper selector)
     navigation: {
-      nextEl: `${swiperSelector}-button-next`,
-      prevEl: `${swiperSelector}-button-prev`,
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
     },
     breakpoints: {
       500: {
